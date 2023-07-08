@@ -1,0 +1,38 @@
+import React, { useState } from "react";
+import "./NavbarStyles.css";
+import { Link } from "react-router-dom";
+import { MenuItems } from "./MenuItems";
+
+const Navbar = () => {
+  const [open, setopen] = useState<boolean>(false);
+
+  const handleOpenNavabar = () => {
+    setopen((prev) => !prev);
+  };
+
+  return (
+    <div>
+      <nav className="NavbarItems">
+        <h1 className="navbar-logo">Travel Geo</h1>
+        <div onClick={handleOpenNavabar} className="menu-icons">
+          <i className={open ? "fas fa-times" : "fas fa-bars"}></i>
+        </div>
+        <ul className={open ? "nav-menu active" : "nav-menu"}>
+          {MenuItems.map((item, index) => {
+            return (
+              <li key={index}>
+                <Link className={item.cName} to={item.cName}>
+                  <i className={item.icon}></i>
+                  {item.title}
+                </Link>
+              </li>
+            );
+          })}
+          <button>Sign Up</button>
+        </ul>
+      </nav>
+    </div>
+  );
+};
+
+export default Navbar;
