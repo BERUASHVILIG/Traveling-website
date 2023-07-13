@@ -8,7 +8,7 @@ const DestinationData = (props: any) => {
       <div className="destination">
         {/* <h1>Popular Destiantion</h1>
         <p>Tours Give you opportunity to see a lot, within a time frame</p> */}
-        <div className="first-des">
+        <div className={props.className}>
           <div className="des-text">
             <h2>{props.heading}</h2>
             <p>{props.text}</p>

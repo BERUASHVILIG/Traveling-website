@@ -12,6 +12,7 @@ const Destination = () => {
       <h1>Popular Destiantion</h1>
       <p>Tours Give you opportunity to see a lot, within a time frame</p>
       <DestinationData
+        className="first-des"
         heading="Taal Volcano, Batangas"
         text="One of the most iconic views in Luzon, Mt. Taal boasts a volcano
             inside a lake inside and island. if your fancy a closer look, the
@@ -25,6 +26,7 @@ const Destination = () => {
         img2={Mountain2}
       />
       <DestinationData
+        className="first-des-reverse"
         heading="Mt. Daguldul, Batangas"
         text="If you are looking for a hike that's a little more challenging but still good for a beginnner mountaineer, check out Mt. Daguldul
         in  San Juan, Batangas. You'll start  your hike from the beach and pass through tropical forest different rock formations, and small
