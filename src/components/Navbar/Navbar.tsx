@@ -13,7 +13,7 @@ const Navbar = () => {
   return (
     <div>
       <nav className="NavbarItems">
-        <h1 className="navbar-logo">Travel Geo</h1>
+        <h1 className="navbar-logo">Trippy</h1>
         <div onClick={handleOpenNavabar} className="menu-icons">
           <i className={open ? "fas fa-times" : "fas fa-bars"}></i>
         </div>
@@ -21,7 +21,7 @@ const Navbar = () => {
           {MenuItems.map((item, index) => {
             return (
               <li key={index}>
-                <Link className={item.cName} to={item.cName}>
+                <Link className={item.cName} to={item.url}>
                   <i className={item.icon}></i>
                   {item.title}
                 </Link>
