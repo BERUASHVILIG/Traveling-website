@@ -1,5 +1,5 @@
 import React from "react";
-import DestinationData from "../DestinationData";
+import DestinationData from "./DestinationData";
 
 import Mountain1 from "../../assets/1.jpg";
 import Mountain2 from "../../assets/2.jpg";
