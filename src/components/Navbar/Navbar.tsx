@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import "./NavbarStyles.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { MenuItems } from "./MenuItems";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const [open, setopen] = useState<boolean>(false);
 
   const handleOpenNavabar = () => {
@@ -28,7 +29,7 @@ const Navbar = () => {
               </li>
             );
           })}
-          <button>Sign Up</button>
+          <button onClick={() => navigate("/signup")}>Sign Up</button>
         </ul>
       </nav>
     </div>
