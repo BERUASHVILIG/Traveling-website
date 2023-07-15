@@ -7,7 +7,8 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import SignUp from "./pages/SignUp";
+import SignUp from "./pages/auth/SignUp";
+import AuthDetails from "./pages/auth/AuthDetails";
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
         <Route path="/service" element={<Service />} />
         <Route path="/signup" element={<SignUp />} />
       </Routes>
+      <AuthDetails />
       <Footer />
     </div>
   );
