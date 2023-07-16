@@ -3,7 +3,6 @@ import Hero from "../../components/Hero";
 import hero from "../../assets/12.jpg";
 import Destination from "../../components/Destination";
 import Trip from "../../components/Trip";
-import SignIn from "../auth/SignIn";
 
 const Home = () => {
   return (
@@ -19,7 +18,6 @@ const Home = () => {
       />
       <Destination />
       <Trip />
-      <SignIn />
     </div>
   );
 };

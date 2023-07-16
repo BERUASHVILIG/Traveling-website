@@ -14,7 +14,9 @@ const Navbar = () => {
   return (
     <div>
       <nav className="NavbarItems">
-        <h1 className="navbar-logo">Trippy</h1>
+        <h1 className="navbar-logo" onClick={() => navigate("/")}>
+          Trippy
+        </h1>
         <div onClick={handleOpenNavabar} className="menu-icons">
           <i className={open ? "fas fa-times" : "fas fa-bars"}></i>
         </div>

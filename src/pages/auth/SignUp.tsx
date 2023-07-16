@@ -27,6 +27,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import Hero from "../../components/Hero";
 
 import SignImg from "../../assets/12.jpg";
+import { Link } from "react-router-dom";
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
@@ -36,34 +37,43 @@ const SignUp = () => {
     e.preventDefault();
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        console.log(userCredential);
+        setEmail("");
+        setPassword("");
+        alert(userCredential);
       })
       .catch((error) => {
-        console.log(error);
+        alert(error);
       });
   };
   return (
     <div>
       <Hero cName="hero-mid" heroImg={SignImg} title="SignUp" />
-      <div className="hero-mid">
-        <h1>Sign Up</h1>
-        <p>Create Account</p>
-        <form onSubmit={signUp}>
-          <input
-            type="text"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <input
-            type="Password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <button type="submit">Sign Up</button>
-        </form>
-      </div>
+      {isAuth ? (
+        <p>Profile</p>
+      ) : (
+        <div className="hero-mid">
+          <div className="form-container">
+            <h1>Sign Up</h1>
+            <p>Create Account</p>
+            <form onSubmit={signUp}>
+              <input
+                type="text"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <input
+                type="Password"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <button type="submit">Sign Up</button>
+              <Link to={"/signin"}>SignIn</Link>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

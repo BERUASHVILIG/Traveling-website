@@ -31,7 +31,7 @@ const AuthDetails = () => {
       {authUser ? (
         <>
           <p>signIn{`${authUser.email}`}</p>{" "}
-          <button onClick={userSignOut}>Sign Out</button>
+          <button onClick={userSignOut}>Signaa Out</button>
         </>
       ) : (
         <p>Signed out</p>

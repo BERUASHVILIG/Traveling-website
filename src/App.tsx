@@ -8,6 +8,7 @@ import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import SignUp from "./pages/auth/SignUp";
+import SignIn from "./pages/auth/SignIn";
 import AuthDetails from "./pages/auth/AuthDetails";
 
 const App = () => {
@@ -20,8 +21,8 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/service" element={<Service />} />
         <Route path="/signup" element={<SignUp />} />
-      </Routes>
-      <AuthDetails />
+        <Route path="/signin" element={<SignIn />} />
+      </Routes>{" "}
       <Footer />
     </div>
   );
