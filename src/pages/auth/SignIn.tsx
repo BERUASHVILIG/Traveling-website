@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import { auth } from "../../firebase/Firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithPopup,
+  GoogleAuthProvider,
+} from "firebase/auth";
 import Hero from "../../components/Hero";
 import SignImg from "../../assets/12.jpg";
 
@@ -20,28 +26,40 @@ const SignIn = () => {
         alert(error);
       });
   };
+
+  const googleSignIn = () => {
+    const provider = new GoogleAuthProvider();
+    const auth = getAuth();
+
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        console.log(result.user);
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
+  };
   return (
-    <div className="signIn-container">
-      <Hero cName="hero-mid" heroImg={SignImg} title="SignIn" />
-      <h1>Sign In</h1>
-      <div className="hero-mid">
-        <div className="form-container">
-          <form onSubmit={signIn}>
-            <input
-              type="text"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <input
-              type="Password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <button type="submit">Login</button>
-          </form>
-        </div>
+    <div className="hero-mid">
+      <div className="form-container">
+        <h1>Sign In</h1>
+        <p>Visit Account</p>
+        <form onSubmit={signIn}>
+          <input
+            type="text"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <input
+            type="Password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <button onClick={googleSignIn}>Sign in with google</button>
+          <button type="submit">Login</button>
+        </form>
       </div>
     </div>
   );
